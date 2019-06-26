@@ -9,17 +9,17 @@
     </head>
     <body>
         This page is for test applinks....
-        <script>
-            window.location.href=getQueryString("target_url");
-        </script>
-    </body>
 	<script>
-    		function getQueryString(name) {
-	    		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
 	    		var r = window.location.search.substr(1).match(reg);
 	    		if (r != null) 
             			return unescape(r[2]); 
        			return null;
 		}
 	</script>
+    </body>
+	<script>
+            window.location.href=getQueryString("target_url");
+        </script>
 </html>
