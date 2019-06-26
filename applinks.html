@@ -6,9 +6,6 @@
         <meta property="og:title" content="example title" />
         <meta property="og:description" content="example description" />
         <meta property="og:image" content="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
-    </head>
-    <body>
-        This page is for test applinks....
 	<script>
 		function getQueryString(name) {
 			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -18,6 +15,23 @@
        			return null;
 		}
 	</script>
+    </head>
+    <body>
+        This page is for test applinks....
+	<script>
+		var meta = document.getElementsByTagName('meta');
+		var target_title = getQueryString("target_title");
+		var target_desc = getQueryString("target_desc");
+		var target_image = getQueryString("target_image");
+		if (target_title != null) {
+			meta["property=og:title"].setAttribute('content',);
+		}
+		if (target_desc != null) {
+			meta["property=og:description"].setAttribute('content',);
+		}
+		if (target_image != null) {
+			meta["property=og:image"].setAttribute('content',);
+		}
     </body>
 	<script>
             window.location.href=getQueryString("target_url");
