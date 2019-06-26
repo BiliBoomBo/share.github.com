@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta property="al:android:url" content="sharesample://story/1234" />
+        <meta property="al:android:app_name" content="EMMX Dev" />
+        <meta property="al:android:package" content="com.microsoft.emmx.development" />
+        <meta property="og:title" content="example title" />
+        <meta property="og:description" content="example description" />
+        <meta property="og:image" content="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
+    </head>
+    <body>
+        This page is for test applinks....
+        <script>
+            window.location.href=getQueryString("target_url");
+        </script>
+    </body>
+	<script>
+    		function getQueryString(name) {
+	    		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	    		var r = window.location.search.substr(1).match(reg);
+	    		if (r != null) 
+            			return unescape(r[2]); 
+       			return null;
+		}
+	</script>
+</html>
