@@ -19,19 +19,7 @@
     <body>
         This page is for test applinks....
 	    <script>
-		var meta = document.getElementsByTagName('meta');
-		var target_title = getQueryString("target_title");
-		var target_desc = getQueryString("target_desc");
-		var target_image = getQueryString("target_image");
-		if (target_title != null) {
-			meta[3].setAttribute('content', target_title);
-		}
-		if (target_desc != null) {
-			meta[4].setAttribute('content', target_desc);
-		}
-		if (target_image != null) {
-			meta[5].setAttribute('content', target_image);
-		}
+		window.location.href=getQueryString("target_url");
 	    </script>
     </body>
 </html>
