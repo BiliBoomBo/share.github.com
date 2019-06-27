@@ -39,9 +39,10 @@
     </head>
     <body>
         This page is for test applinks....
+	    <a id="original" href="https://www.baidu.com">点击此处</a>
 	    <script>
 		    if (isFirstOpen()) {
-			    window.location.href=getQueryString("target_url");
+			    document.getElementById("original").click();
 		    } else {
 			    alert("stay in this page");
 		    }
