@@ -39,10 +39,11 @@
     </head>
     <body>
         This page is for test applinks....
-	    <a id="original" href="https://www.baidu.com">点击此处</a>
+	    <a id="target" href="https://www.baidu.com"></a>
 	    <script>
 		    if (isFirstOpen()) {
-			    document.getElementById("original").click();
+			    var link = document.getElementById("target");
+			    link.setAttribute("href", getQueryString("target_url"));
 		    } else {
 			    alert("stay in this page");
 		    }
