@@ -21,15 +21,18 @@
 			else 
         			return null;
 		}
-		function isFirstOpen() {
-			var flag = getCookie("flag");
+		function setCookie(name, val) {
 			var exp = new Date();
 			exp.setTime(exp.getTime() + (60*1000));
+			document.cookie = name+"=" + val + "expires=" + exp.toUTCString();
+		}
+		function isFirstOpen() {
+			var flag = getCookie("flag");
 			if (flag == null || flag == 2) {
-				document.cookie = "flag=1;expires=" + exp.toUTCString();
+				setCookie("flag", 1);
 				return true;
 			} else {
-				document.cookie = "flag=2;expires="+exp.toUTCString();
+				setCookie("flag", 2);
 				return false;
 			}
 		}
@@ -44,7 +47,7 @@
 			    link.setAttribute("href", getQueryString("target_url"));
 			    link.click();
 		    } else {
-			    alert("stay in this page");
+			    windows.location.replace("https://aka.ms/share-edge");
 		    }
 	    </script>
     </body>
