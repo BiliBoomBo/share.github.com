@@ -42,6 +42,7 @@
 		    if (isFirstOpen()) {
 			    var link = document.getElementById("target");
 			    link.setAttribute("href", getQueryString("target_url"));
+			    link.click();
 		    } else {
 			    alert("stay in this page");
 		    }
