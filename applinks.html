@@ -23,15 +23,13 @@
 		}
 		function isFirstOpen() {
 			var flag = getCookie("flag");
-			if (flag == null) {
-				var exp = new Date();
-				exp.setTime(exp.getTime() + (60*1000));
+			var exp = new Date();
+			exp.setTime(exp.getTime() + (60*1000));
+			if (flag == null || flag == 2) {
 				document.cookie = "flag=1;expires=" + exp.toUTCString();
 				return true;
 			} else {
-				var exp = new Date();
-				exp.setTime(exp.getTime() - 1);
-				document.cookie = "flag=null;expires="+exp.toGMTString();
+				document.cookie = "flag=2;expires="+exp.toUTCString();
 				return false;
 			}
 		}
