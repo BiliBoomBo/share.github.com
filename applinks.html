@@ -41,9 +41,16 @@
     <body>
         This page is for test applinks....
 	    <script>
-		    if (isFirstOpen()) {
-			    window.location.href = getQueryString("target_url");
-		    }
+		    history.replaceState(null, null, location.pathname + "#123");
+		    history.pushState(null, null, location.pathname);
+		    window.addEventListener("popstate", function() {
+			    if (location.hash === "#123") {
+				    history.replaceState(null, null, location.pathname);
+				    setTimeout(function() {
+					    location.replace("https://www.google.com");
+				    }, 0);
+			    }
+		    }, false);
 	    </script>
     </body>
 </html>
