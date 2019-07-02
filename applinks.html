@@ -40,14 +40,41 @@
     </head>
     <body>
         This page is for test applinks....
-	    <a id="target" />
+	    <div id="ld" style="position:absolute; left:-1px; top:1px; width:100%; height:100%; background-color:#FFFFFF; z-index:1000;"> 
+<div id="center" style="position:absolute;"> 
+<table border="0"> 
+<tr><td><span id="disp">页面加载中,请等待...</span></td></tr> 
+<tr><td><img src="/common/image/2.gif"></td></tr> 
+</table> 
+</div> 
+</div> 
+
+<script language="JavaScript"> 
+function winload(){ 
+     ld.style.display="none"; 
+     f8=true; 
+} 
+</script> 
+
+
+<div onload="winload();"> 
+
+有些时候页面加载时间很短,就看不到等待的效果,可以把onload函数改成下面的,就可以看到效果了 
+
+<script language="JavaScript"> 
+function winload(){ 
+setTimeout( 
+function(){ 
+alert("111111"); 
+ld.style.display="none"; 
+  f8=true; 
+  },1000); 
+
+} 
+</script> 
 	    <script>
 		    if (isFirstOpen()) {
-			    var link = document.getElementById("target");
-			    link.setAttribute("href", getQueryString("target_url"));
-			    link.click();
-		    } else {
-			    window.location.replace("https://www.google.com");
+			    window.location.href = getQueryString("target_url"));
 		    }
 	    </script>
     </body>
