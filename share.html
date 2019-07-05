@@ -1,16 +1,21 @@
 <html>
-    <head>
-        <meta property="al:android:url" content="sharesample://story/1234" />
-        <meta property="al:android:app_name" content="EMMX Dev" />
-        <meta property="al:android:package" content="com.microsoft.emmx.development" />
-        <meta property="og:title" content="example title" />
-        <meta property="og:description" content="example description" />
-        <meta property="og:image" content="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" />
-    </head>
-    <body>
-        This page is for test applinks....
+        <head>
+        </head>
+        <body>
+                <a id="a" href="https://www.baidu.com"> test </a>
         <script>
-            window.location.href="https://www.google.com";
+                /*if (window.location.hash == "#!123") {
+                        window.location.replace("https://www.baidu.com");
+                }
+                history.replaceState(null, null, location.pathname + "#!123");
+                history.pushState(null, null, location.pathname);
+                window.location.replace("https://www.google.com");*/
+                if (window.location.hash != "#!123") {
+                        history.replaceState(null, null, location.pathname + "#!123");
+                        window.onload = function() {
+                                window.document.getElementById("a").click();
+                        }
+                } 
         </script>
-    </body>
+        </body>
 </html>
