@@ -6,25 +6,30 @@
         <meta property="og:title" content="example title" />
         <meta property="og:description" content="example description" />
         <meta property="og:image" content="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
+	<meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@edge" />
+        <meta name="twitter:title" content="example title" />
+        <meta name="twitter:description" content="example description" />
+        <meta name="twitter:image" content="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
 	<script>
-		function getQueryString(name) {
-			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-	    		var r = window.location.search.substr(1).match(reg);
-	    		if (r != null) 
-            			return unescape(r[2]); 
-       			return null;
-		}
+		//function getQueryString(name) {
+		//	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	    	//	var r = window.location.search.substr(1).match(reg);
+	    	//	if (r != null) 
+            	//		return unescape(r[2]); 
+       		//	return null;
+		//}
 	</script>
     </head>
     <body>
 	    <script>
-		    var target_url = getQueryString("target");
-		    if (target_url == null) {
-                        window.location.replace("https://www.google.com");
-		    }
-		    history.replaceState(null, null, location.pathname);
-		    history.pushState(null, null, location.pathname);
-                    window.location.replace(target_url); 
+		    //var target_url = getQueryString("target");
+		    //if (target_url == null) {
+                    //    window.location.replace("https://www.google.com");
+		    //}
+		    //history.replaceState(null, null, location.pathname);
+		    //history.pushState(null, null, location.pathname);
+                    //window.location.replace(target_url); 
 	    </script>
     </body>
 </html>
