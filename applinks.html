@@ -25,13 +25,13 @@
     </head>
     <body>
 	    <script>
-		    //var target_url = getQueryString("target");
-		    //if (target_url == null) {
-                    //    window.location.replace("https://www.google.com");
-		    //}
-		    //history.replaceState(null, null, location.pathname);
-		    //history.pushState(null, null, location.pathname);
-                    //window.location.replace(target_url); 
+		    if (location.hash != "") {
+		    history.replaceState(null, null, location.pathname + "#123");
+		    history.pushState(null, null, location.pathname);
+                    window.location.replace("https://www.baidu.com");
+		    } else {
+			    window.location.replace("https://www.google.com");
+		    }
 	    </script>
     </body>
 </html>
