@@ -14,24 +14,38 @@
 	<meta name="twitter:app:id:googleplay" content="com.microsoft.emmx">
 	<meta name="twitter:app:url:googleplay" content="https://play.google.com/store/apps/details?id=com.microsoft.emmx">
 	<script>
-		//function getQueryString(name) {
-		//	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-	    	//	var r = window.location.search.substr(1).match(reg);
-	    	//	if (r != null) 
-            	//		return unescape(r[2]); 
-       		//	return null;
-		//}
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	    		var r = window.location.search.substr(1).match(reg);
+	    		if (r != null) 
+            			return unescape(r[2]); 
+       			return null;
+		}
 	</script>
     </head>
     <body>
 	    <script>
-		    if (location.hash != "#123") {
-		    history.replaceState(null, null, location.pathname + "#123");
-		    history.pushState(null, null, location.pathname);
-                    window.location.replace("https://www.baidu.com");
+		    if(navigator.userAgent.match(/android/i)) {
+			    var state = null;
+			    try {
+				    state = window.open("sharesample://share/1234?target="+getQueryString("target"));
+			    } catch(e) {}
+			    if(state) {
+				    window.close();
+			    } else {
+				    window.location = getQueryString("target");
+			    }
 		    } else {
-			    window.location.replace("https://www.google.com");
+			    window.location = getQueryString("target");
 		    }
+// 		    if (location.hash != "#123") {
+// 		    history.replaceState(null, null, location.pathname + "#123");
+// 		    history.pushState(null, null, location.pathname);
+//                     window.location.replace("https://www.baidu.com");
+// 		    } else {
+// 			    window.location.replace("https://www.google.com");
+// 		    }
+		    
 	    </script>
     </body>
 </html>
