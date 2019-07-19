@@ -25,7 +25,9 @@
     </head>
     <body>
 	    <script>
-		    if(navigator.userAgent.match(/android/i)) {
+		    var flag = navigator.userAgent.match(/android/i);
+		    alert(flag);
+		    if(flag) {
 			    var state = null;
 			    try {
 				    state = window.open("sharesample://share/1234?target="+getQueryString("target"));
